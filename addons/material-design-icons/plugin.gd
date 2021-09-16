@@ -1,7 +1,7 @@
 tool
 extends EditorPlugin
 var icon_search : WindowDialog
-var menu_item := ["Search Material Icons", "popup_centered", Vector2(450, 400)]
+var menu_item := ["Find Material Icon", "popup_centered", Vector2(450, 400)]
 
 func _enter_tree():
 	icon_search = preload("icon_finder/IconFinder.tscn").instance()
