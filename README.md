@@ -11,7 +11,7 @@ This addon provides the following nodes to use the icons in Godot:
 It's also adds **IconsFinder** to the Godot's **Tools** menu.
 So you can find the icons easily.
 
-![IconsFinder Screen Shot](screenshot.png)
+![IconsFinder Screen Shot](.assets/screenshot.png)
 
 [lic]: https://img.shields.io/github/license/rakugoteam/Godot-Material-Icons?style=flat-square&label=📃%20License&
 [lang]: https://img.shields.io/github/languages/top/rakugoteam/Godot-Material-Icons?style=flat-square

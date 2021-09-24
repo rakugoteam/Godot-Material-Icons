@@ -1,40 +1,39 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/material-design-icons/fonts/material_design_icons.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/material-design-icons/nodes/MaterialIcon.gd" type="Script" id=2]
-[ext_resource path="res://themes/DarkTheme.tres" type="Theme" id=3]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=1]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=2]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=5]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=6]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=7]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
@@ -42,18 +41,17 @@ font_data = ExtResource( 1 )
 [node name="Test" type="VBoxContainer"]
 anchor_right = 1.0
 margin_bottom = 40.0
-theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 
 [node name="Button" type="Button" parent="HBoxContainer2"]
 margin_right = 142.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "󱊒Button"
 __meta__ = {
@@ -67,7 +65,7 @@ margin_left = 99.685
 margin_top = -4.13442
 margin_right = 147.685
 margin_bottom = 43.8656
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 1 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {
@@ -77,7 +75,7 @@ __meta__ = {
 [node name="MenuButton" type="MenuButton" parent="HBoxContainer2"]
 margin_left = 146.0
 margin_right = 289.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 focus_mode = 2
 size_flags_horizontal = 3
 text = "󱊒Button"
@@ -91,7 +89,7 @@ margin_left = 99.685
 margin_top = -4.13442
 margin_right = 147.685
 margin_bottom = 43.8656
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 2 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {
@@ -101,7 +99,7 @@ __meta__ = {
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer2"]
 margin_left = 293.0
 margin_right = 436.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "󱊒Button"
 __meta__ = {
@@ -114,7 +112,7 @@ margin_left = 99.685
 margin_top = -4.13442
 margin_right = 147.685
 margin_bottom = 43.8656
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 3 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {
@@ -124,7 +122,7 @@ __meta__ = {
 [node name="LinkButton" type="LinkButton" parent="HBoxContainer2"]
 margin_left = 440.0
 margin_right = 583.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 focus_mode = 2
 size_flags_horizontal = 3
 text = "󱊒Link     "
@@ -138,7 +136,7 @@ margin_left = 22.8299
 margin_top = -9.48909
 margin_right = 70.8299
 margin_bottom = 38.5109
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 4 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {
@@ -149,7 +147,7 @@ icon_size = 20
 [node name="ToolButton" type="ToolButton" parent="HBoxContainer2"]
 margin_left = 587.0
 margin_right = 730.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "󱊒Button"
 __meta__ = {
@@ -162,7 +160,7 @@ margin_left = 99.685
 margin_top = -4.13442
 margin_right = 147.685
 margin_bottom = 43.8656
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 5 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {
@@ -172,7 +170,7 @@ __meta__ = {
 [node name="CheckButton" type="CheckButton" parent="HBoxContainer2"]
 margin_left = 734.0
 margin_right = 877.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "󱊒Button"
 __meta__ = {
@@ -185,7 +183,7 @@ margin_left = 72.3333
 margin_top = -4.13442
 margin_right = 120.333
 margin_bottom = 43.8656
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 6 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {
@@ -195,7 +193,7 @@ __meta__ = {
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer2"]
 margin_left = 881.0
 margin_right = 1024.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "󱊒Button"
 __meta__ = {
@@ -209,7 +207,7 @@ margin_left = 99.6851
 margin_top = -4.13442
 margin_right = 147.685
 margin_bottom = 43.8656
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 7 )
 text = "󰥶"
 script = ExtResource( 2 )
 __meta__ = {

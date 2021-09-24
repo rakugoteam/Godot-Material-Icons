@@ -22,6 +22,7 @@ func _run():
 
 	for icon in MaterialIcons.icons.keys():
 		var button = Button.new()
+		button.clip_text = false
 		button.name = icon
 		button.set("custom_fonts/font", font)
 		button.text = MaterialIcons.get_icon_char(icon)
