@@ -11,7 +11,11 @@ This addon provides the following nodes to use the icons in Godot:
 It's also adds **IconsFinder** to the Godot's **Tools** menu.
 So you can find the icons easily.
 
-![IconsFinder Screen Shot](.assets/screenshot.png)
+![IconsFinder Screen Shot](screenshot_if.png)
+
+## Exporting
+For emojis to work in exported projects, you need add `*.json` files to include files settings:
+![include files settings](screenshot_export.png)
 
 [lic]: https://img.shields.io/github/license/rakugoteam/Godot-Material-Icons?style=flat-square&label=📃%20License&
 [lang]: https://img.shields.io/github/languages/top/rakugoteam/Godot-Material-Icons?style=flat-square
