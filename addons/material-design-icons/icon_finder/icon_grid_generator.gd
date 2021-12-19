@@ -5,14 +5,12 @@ var grid_bound := 0.9
 var grid_x := 990 
 var button_x := 36
 
-const font_file := preload("../fonts/material_design_icons.ttf")
+const font_file := preload("../fonts/24.tres")
 var MaterialIcons := preload("../icons/icons.gd").new()
 var font := DynamicFont.new()
 
 func _run():
-	font.font_data = font_file
-	font.size = 24
-
+	font = font_file
 	var i := 1.0
 	var p: = 0.0
 	var size := float(MaterialIcons.icons.size())
