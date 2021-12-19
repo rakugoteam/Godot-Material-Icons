@@ -8,9 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Button",
+"class": "MaterialButton",
+"language": "GDScript",
+"path": "res://addons/material-design-icons/nodes/MaterialButton.gd"
+}, {
+"base": "Label",
+"class": "MaterialIcon",
+"language": "GDScript",
+"path": "res://addons/material-design-icons/nodes/MaterialIcon.gd"
+} ]
+_global_script_class_icons={
+"MaterialButton": "res://addons/material-design-icons/nodes/MaterialButton.svg",
+"MaterialIcon": "res://addons/material-design-icons/nodes/MaterialIcon.svg"
+}
+
 [application]
 
 config/name="Material Icons for Godot"
+run/main_scene="res://Test.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
