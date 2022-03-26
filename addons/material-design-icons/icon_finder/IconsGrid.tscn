@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/material-design-icons/fonts/24.tres" type="DynamicFont" id=1]
 
-[node name="" type="GridContainer"]
+[node name="IconsGrid" type="GridContainer"]
 margin_right = 990.0
 columns = 24
 
