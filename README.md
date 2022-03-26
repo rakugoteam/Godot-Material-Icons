@@ -13,6 +13,17 @@ So you can find the icons easily.
 
 ![IconsFinder Screen Shot](.assets/screenshot.png)
 
+## Install using gd-plug
+To install it with [gd-plug](https://github.com/imjp94/gd-plug) add in your `plug.gd` script:
+```gdscript
+extends "res://addons/gd-plug/plug.gd"
+
+func _plugging():
+	# your other plugins/addons install instructions
+	# ...
+	plug("rakugoteam/Godot-Material-Icons", {"include": [".import/"]})
+```
+
 [lic]: https://img.shields.io/github/license/rakugoteam/Godot-Material-Icons?style=flat-square&label=📃%20License&
 [lang]: https://img.shields.io/github/languages/top/rakugoteam/Godot-Material-Icons?style=flat-square
 [lic-font]:https://img.shields.io/static/v1.svg?label=📜%20Font%20License&message=Pictogrammers%20Free%20License&color=informational&style=flat-square
