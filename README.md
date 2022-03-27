@@ -25,7 +25,7 @@ extends "res://addons/gd-plug/plug.gd"
 func _plugging():
 	# your other plugins/addons install instructions
 	# ...
-	plug("rakugoteam/Godot-Material-Icons", {"include": [".import/"]})
+	plug("rakugoteam/Godot-Material-Icons", {"include": ["addons", ".import/"]})
 ```
 
 [lic]: https://img.shields.io/github/license/rakugoteam/Godot-Material-Icons?style=flat-square&label=📃%20License&
