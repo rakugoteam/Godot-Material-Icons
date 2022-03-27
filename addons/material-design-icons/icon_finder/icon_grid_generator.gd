@@ -16,6 +16,7 @@ func _run():
 	var size := float(MaterialIcons.icons.size())
 	
 	var grid := GridContainer.new()
+	grid.name = "IconsGrid"
 	grid.rect_size.x = grid_x
 
 	for icon in MaterialIcons.icons.keys():
