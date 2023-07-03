@@ -6,33 +6,18 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Button",
-"class": "MaterialButton",
-"language": "GDScript",
-"path": "res://addons/material-design-icons/nodes/MaterialButton.gd"
-}, {
-"base": "Label",
-"class": "MaterialIcon",
-"language": "GDScript",
-"path": "res://addons/material-design-icons/nodes/MaterialIcon.gd"
-} ]
-_global_script_class_icons={
-"MaterialButton": "res://addons/material-design-icons/nodes/MaterialButton.svg",
-"MaterialIcon": "res://addons/material-design-icons/nodes/MaterialIcon.svg"
-}
+config_version=5
 
 [application]
 
 config/name="Material Icons for Godot"
 run/main_scene="res://Test.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/material-design-icons/plugin.cfg" )
+enabled=PackedStringArray("res://addons/material-design-icons/plugin.cfg")
 
 [physics]
 
