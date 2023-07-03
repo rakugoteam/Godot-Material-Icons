@@ -1,4 +1,4 @@
-tool
+@tool
 extends EditorScript
 
 var grid_bound := 0.9
@@ -7,7 +7,7 @@ var button_x := 36
 
 const font_file := preload("../fonts/24.tres")
 var MaterialIcons := preload("../icons/icons.gd").new()
-var font := DynamicFont.new()
+var font := FontFile.new()
 
 func _run():
 	font = font_file
@@ -41,7 +41,7 @@ func _run():
 
 	if result == OK:
 		var path := "res://addons/material-design-icons/icon_finder/IconsGrid.tscn"
-		var error = ResourceSaver.save(path, scene)
+		var error = ResourceSaver.save(scene, path)
 		if error != OK:
 				push_error("An error occurred while saving the scene to disk.")
 				return
