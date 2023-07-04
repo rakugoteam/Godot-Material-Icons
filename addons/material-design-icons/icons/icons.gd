@@ -1,20 +1,21 @@
-tool
+@tool
 extends Node
 
-var json_path = "res://addons/material-design-icons/icons/icons.json"
-var icons:Dictionary = {} setget dummy_set
+var json_path := "res://addons/material-design-icons/icons/icons.json"
+var icons := {}
 
 func _init():
 	var content = get_file_content(json_path)
-	var json_dict = parse_json(content) as Dictionary
-	init_icons_dictionaries(json_dict)
+	var json := JSON.new()
+
+	if json.parse(content) == OK:
+		init_icons_dictionaries(json.data)
 
 func get_file_content(path:String) -> String:
-	var file = File.new()
-	var error = file.open(path, file.READ)
-	var content = ""
+	var file := FileAccess.open(path, FileAccess.READ)
+	var content := ""
 	
-	if error == OK:
+	if file.get_error() == OK:
 		content = file.get_as_text()
 		file.close()
 
@@ -35,7 +36,3 @@ func get_icon_code(id:String) -> int:
 	return 0
 func get_icon_char(id:String) -> String:
 	return char(get_icon_code(id))
-
-
-func dummy_set(_value):
-	pass
