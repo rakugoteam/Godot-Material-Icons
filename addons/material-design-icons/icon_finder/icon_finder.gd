@@ -4,8 +4,8 @@ extends Window
 @export
 @onready var icons_text : RichTextLabel
 
-@export
-var columns : int = 5
+@export_range(0.1, 1, 0.01)
+var x_fill_scale : float = 1.0
 
 @export
 @onready var notify_label : Label
@@ -13,26 +13,42 @@ var columns : int = 5
 @export
 @onready var search_line_edit : LineEdit
 
+@export
+@onready var size_slider : HSlider
+
+@export
+@onready var size_label : Label
 
 func _ready():
 	notify_label.hide()
-	update_table()
 	search_line_edit.text_changed.connect(update_table)
 	icons_text.meta_clicked.connect(_on_meta)
 	icons_text.set_meta_underline(false)
 	icons_text.tooltip_text = "click on icon to copy its name to clipboard"
 	close_requested.connect(hide)
+	size_slider.value_changed.connect(update_icons_size)
+	visibility_changed.connect(_on_visibility_changed)
+
+func _on_visibility_changed():
+	if is_visible():
+		update_icons_size(size_slider.value)
+
+func update_icons_size(value:int):
+	size_label.text = str(value)
+	icons_text.set("theme_override_font_sizes/normal_font_size", value)
+	update_table(search_line_edit.text)
 
 func update_table(filter := ""):
 	var table = "[table={columns}, {inline_align}]"
 	table = table.format({
-		"columns": columns,
+		"columns": int ((icons_text.size.x * x_fill_scale) / size_slider.value) ,
 		"inline_align": INLINE_ALIGNMENT_CENTER
 	})
 
 	for key in MaterialIconsDB.icons:
 		if filter:
-			if not fuzzy(filter, key):
+			# if not fuzzy(filter, key):
+			if not (filter in key):
 				continue
 		
 		var link := "[url={link}]{text}[/url]"
@@ -48,11 +64,11 @@ func update_table(filter := ""):
 	table += "[/table]"
 	icons_text.parse_bbcode(table)
 
-func fuzzy(filter:String, key:String):
-	for letter in filter.to_lower():
-		if not (letter in key):
-			return false
-	return true
+# func fuzzy(filter:String, key:String):
+# 	for letter in filter.to_lower():
+# 		if not (letter in key):
+# 			return false
+# 	return true
 
 func _on_meta(link:String):
 	DisplayServer.clipboard_set(link)

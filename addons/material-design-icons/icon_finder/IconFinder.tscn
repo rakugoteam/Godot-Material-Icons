@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bni8w3a3pcbwn"]
+[gd_scene load_steps=3 format=3 uid="uid://bni8w3a3pcbwn"]
 
 [ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/icon_finder.gd" id="1_nv02s"]
-[ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/size_slider.gd" id="4_1ligc"]
 [ext_resource type="FontFile" uid="uid://bbfeoo2kuf30n" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="4_xlv7e"]
 
-[node name="IconFinder" type="Window" node_paths=PackedStringArray("icons_text", "notify_label", "search_line_edit")]
+[node name="IconFinder" type="Window" node_paths=PackedStringArray("icons_text", "notify_label", "search_line_edit", "size_slider", "size_label")]
 title = "Icon Finder"
 initial_position = 2
 size = Vector2i(775, 400)
 unresizable = true
 script = ExtResource("1_nv02s")
 icons_text = NodePath("Panel/VBoxContainer/RichTextLabel")
-columns = 40
+x_fill_scale = 0.8
 notify_label = NodePath("Panel/VBoxContainer/Notify")
 search_line_edit = NodePath("Panel/VBoxContainer/Search")
+size_slider = NodePath("Panel/VBoxContainer/SliderContainer/HSlider")
+size_label = NodePath("Panel/VBoxContainer/SliderContainer/LabelSize")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -53,16 +54,13 @@ layout_mode = 2
 layout_mode = 2
 text = "Size preview"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/SliderContainer" node_paths=PackedStringArray("icons_text", "value_label")]
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/SliderContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 16.0
 max_value = 128.0
 value = 24.0
-script = ExtResource("4_1ligc")
-icons_text = NodePath("../../RichTextLabel")
-value_label = NodePath("../LabelSize")
 
 [node name="LabelSize" type="Label" parent="Panel/VBoxContainer/SliderContainer"]
 layout_mode = 2
