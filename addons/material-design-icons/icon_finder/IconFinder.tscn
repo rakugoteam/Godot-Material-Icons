@@ -1,69 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://bni8w3a3pcbwn"]
+[gd_scene load_steps=4 format=3 uid="uid://bni8w3a3pcbwn"]
 
-[ext_resource type="PackedScene" uid="uid://53dckbvqppsp" path="res://addons/material-design-icons/icon_finder/IconsGrid.tscn" id="1_1vvpl"]
 [ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/icon_finder.gd" id="1_nv02s"]
-[ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/search.gd" id="2_1n6gv"]
 [ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/size_slider.gd" id="4_1ligc"]
+[ext_resource type="FontFile" uid="uid://bbfeoo2kuf30n" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="4_xlv7e"]
 
-[node name="IconFinder" type="Window" node_paths=PackedStringArray("icons_grid", "notify_label")]
+[node name="IconFinder" type="Window" node_paths=PackedStringArray("icons_text", "notify_label", "search_line_edit")]
 title = "Icon Finder"
-position = Vector2i(0, 36)
-size = Vector2i(836, 409)
-wrap_controls = true
-popup_window = true
+initial_position = 2
+size = Vector2i(775, 400)
+unresizable = true
 script = ExtResource("1_nv02s")
-icons_grid = NodePath("VBoxContainer/ScrollContainer/IconsGrid")
-notify_label = NodePath("VBoxContainer/Notify")
+icons_text = NodePath("Panel/VBoxContainer/RichTextLabel")
+columns = 40
+notify_label = NodePath("Panel/VBoxContainer/Notify")
+search_line_edit = NodePath("Panel/VBoxContainer/Search")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-clip_contents = true
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Search" type="LineEdit" parent="VBoxContainer" node_paths=PackedStringArray("grid")]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Search" type="LineEdit" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search"
 caret_blink = true
 caret_blink_interval = 0.5
-script = ExtResource("2_1n6gv")
-grid = NodePath("../ScrollContainer/IconsGrid")
 
-[node name="Notify" type="Label" parent="VBoxContainer"]
+[node name="Notify" type="Label" parent="Panel/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Icon-x was copied to clipboard."
 
-[node name="SliderContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="SliderContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/SliderContainer"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/SliderContainer"]
 layout_mode = 2
 text = "Size preview"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/SliderContainer" node_paths=PackedStringArray("grid", "value_label")]
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/SliderContainer" node_paths=PackedStringArray("icons_text", "value_label")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 16.0
 max_value = 128.0
-value = 16.0
+value = 24.0
 script = ExtResource("4_1ligc")
-grid = NodePath("../../ScrollContainer/IconsGrid")
+icons_text = NodePath("../../RichTextLabel")
 value_label = NodePath("../LabelSize")
 
-[node name="LabelSize" type="Label" parent="VBoxContainer/SliderContainer"]
+[node name="LabelSize" type="Label" parent="Panel/VBoxContainer/SliderContainer"]
 layout_mode = 2
-text = "16"
+text = "24"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="IconsGrid" parent="VBoxContainer/ScrollContainer" instance=ExtResource("1_1vvpl")]
-layout_mode = 2
-columns = 23
+tooltip_text = "click on icon to copy its name to clipboard"
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_xlv7e")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+meta_underlined = false

@@ -2,7 +2,7 @@
 extends HSlider
 
 @export
-@onready var grid : GridContainer
+@onready var icons_text : RichTextLabel
 
 @export
 @onready var value_label : Label
@@ -12,6 +12,4 @@ func _ready():
 
 func update_icons_size(value:int):
 	value_label.text = str(value)
-	for c in grid.get_children():
-		var b := c as MaterialButton
-		b.icon_size = value
+	icons_text.set("theme_override_font_sizes/normal_font_size", value)
