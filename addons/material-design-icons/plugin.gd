@@ -1,6 +1,6 @@
 @tool
 extends EditorPlugin
-var icon_search := preload("res://addons/material-design-icons/icon_finder/IconFinder.tscn").instance() as Window
+var icon_search := preload("res://addons/material-design-icons/icon_finder/IconFinder.tscn").instantiate() as Window
 
 func _enter_tree():
 	add_autoload_singleton("MaterialIconsDB", 
