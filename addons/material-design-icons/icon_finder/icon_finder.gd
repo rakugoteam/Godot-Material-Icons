@@ -5,7 +5,7 @@ extends Window
 @onready var icons_text : RichTextLabel
 
 @export_range(0.1, 1, 0.01)
-var x_fill_scale : float = 1.0
+var fill_scale_x : float = 0.8
 
 @export
 @onready var notify_label : Label
@@ -27,7 +27,7 @@ func _ready():
 	icons_text.tooltip_text = "click on icon to copy its name to clipboard"
 	close_requested.connect(hide)
 	size_slider.value_changed.connect(update_icons_size)
-	visibility_changed.connect(_on_visibility_changed)
+	about_to_popup.connect(update_table)
 
 func _on_visibility_changed():
 	if is_visible():
@@ -41,7 +41,7 @@ func update_icons_size(value:int):
 func update_table(filter := ""):
 	var table = "[table={columns}, {inline_align}]"
 	table = table.format({
-		"columns": int ((icons_text.size.x * x_fill_scale) / size_slider.value) ,
+		"columns": int ((size.x * fill_scale_x) / size_slider.value) ,
 		"inline_align": INLINE_ALIGNMENT_CENTER
 	})
 
