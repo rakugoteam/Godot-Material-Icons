@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Material Icons for Godot"
 run/main_scene="res://Test.tscn"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.1")
 config/icon="res://icon.png"
+
+[autoload]
+
+MaterialIconsDB="*res://addons/material-design-icons/icons/icons.gd"
 
 [editor_plugins]
 

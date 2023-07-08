@@ -1,64 +1,69 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bni8w3a3pcbwn"]
 
-[ext_resource path="res://addons/material-design-icons/icon_finder/icon_finder.gd" type="Script" id=1]
-[ext_resource path="res://addons/material-design-icons/icon_finder/search.gd" type="Script" id=2]
-[ext_resource path="res://addons/material-design-icons/icon_finder/IconsGrid.tscn" type="PackedScene" id=3]
+[ext_resource type="PackedScene" uid="uid://53dckbvqppsp" path="res://addons/material-design-icons/icon_finder/IconsGrid.tscn" id="1_1vvpl"]
+[ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/icon_finder.gd" id="1_nv02s"]
+[ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/search.gd" id="2_1n6gv"]
+[ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/size_slider.gd" id="4_1ligc"]
 
-[node name="IconFinder" type="WindowDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 200, 100 )
-window_title = "Material Icon Finder"
-resizable = true
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-grid_node_path = NodePath("VBoxContainer/ScrollContainer/GridContainer")
-label_node_path = NodePath("VBoxContainer/Label")
-
-[node name="Tween" type="Tween" parent="."]
+[node name="IconFinder" type="Window" node_paths=PackedStringArray("icons_grid", "notify_label")]
+title = "Icon Finder"
+position = Vector2i(0, 36)
+size = Vector2i(836, 409)
+wrap_controls = true
+popup_window = true
+script = ExtResource("1_nv02s")
+icons_grid = NodePath("VBoxContainer/ScrollContainer/IconsGrid")
+notify_label = NodePath("VBoxContainer/Notify")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Search" type="LineEdit" parent="VBoxContainer"]
-margin_right = 1014.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-align = 1
-placeholder_text = "Search"
-caret_blink = true
-caret_blink_speed = 0.5
-script = ExtResource( 2 )
-grid_node_path = NodePath("../ScrollContainer/GridContainer")
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-visible = false
-margin_top = 28.0
-margin_right = 1014.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0.4, 0.929412, 0, 1 )
-text = "Icon-x was copied to clipboard."
-align = 1
-valign = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
-margin_top = 46.0
-margin_right = 1014.0
-margin_bottom = 590.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GridContainer" parent="VBoxContainer/ScrollContainer" instance=ExtResource( 3 )]
-margin_right = 996.0
-margin_bottom = 8122.0
-columns = 25
+[node name="Search" type="LineEdit" parent="VBoxContainer" node_paths=PackedStringArray("grid")]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search"
+caret_blink = true
+caret_blink_interval = 0.5
+script = ExtResource("2_1n6gv")
+grid = NodePath("../ScrollContainer/IconsGrid")
+
+[node name="Notify" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Icon-x was copied to clipboard."
+
+[node name="SliderContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SliderContainer"]
+layout_mode = 2
+text = "Size preview"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SliderContainer" node_paths=PackedStringArray("grid", "value_label")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 16.0
+max_value = 128.0
+value = 16.0
+script = ExtResource("4_1ligc")
+grid = NodePath("../../ScrollContainer/IconsGrid")
+value_label = NodePath("../LabelSize")
+
+[node name="LabelSize" type="Label" parent="VBoxContainer/SliderContainer"]
+layout_mode = 2
+text = "16"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IconsGrid" parent="VBoxContainer/ScrollContainer" instance=ExtResource("1_1vvpl")]
+layout_mode = 2
+columns = 23

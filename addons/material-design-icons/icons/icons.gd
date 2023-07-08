@@ -2,9 +2,12 @@
 extends Node
 
 var json_path := "res://addons/material-design-icons/icons/icons.json"
+@onready var font := preload(
+	"res://addons/material-design-icons/fonts/material_design_icons.ttf"
+	) as FontFile
 var icons := {}
 
-func _init():
+func _ready():
 	var content = get_file_content(json_path)
 	var json := JSON.new()
 
@@ -34,5 +37,14 @@ func get_icon_code(id:String) -> int:
 		
 	push_warning("Icon '%s' not found." % id)
 	return 0
+
+func get_icon_name(char:int) -> String:
+	for icon in icons:
+		if icons[icon] == char:
+			return icon
+
+	push_warning("Icon with char '%s' not found." % char)
+	return ""
+
 func get_icon_char(id:String) -> String:
 	return char(get_icon_code(id))

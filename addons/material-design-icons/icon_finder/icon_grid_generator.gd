@@ -1,40 +1,19 @@
 @tool
 extends EditorScript
 
-var grid_bound := 0.9
-var grid_x := 990 
-var button_x := 36
-
-const font_file := preload("../fonts/24.tres")
-var MaterialIcons := preload("../icons/icons.gd").new()
-var font := FontFile.new()
+var icons := MaterialIconsDB.icons
+var icons_size := 24
 
 func _run():
-	font = font_file
-	var i := 1.0
-	var p: = 0.0
-	var size := float(MaterialIcons.icons.size())
-	
 	var grid := GridContainer.new()
 	grid.name = "IconsGrid"
-	grid.rect_size.x = grid_x
-
-	for icon in MaterialIcons.icons.keys():
-		var button = Button.new()
-		button.clip_text = false
-		button.name = icon
-		button.set("custom_fonts/font", font)
-		button.text = MaterialIcons.get_icon_char(icon)
-		grid.add_child(button)
-		button.owner = grid
-
-		if p < int(i/size*100):
-			p = int(i/size*100)
-			print("loaded icons: ", p, "%")
-
-		i += 1
-
-	grid.columns = int((grid.rect_size.x / button_x)*grid_bound)
+	for k in icons.keys():
+		var b := MaterialButton.new()
+		b.name = k
+		b.icon_name = k
+		b.icon_size = icons_size
+		grid.add_child(b)
+		b.owner = grid
 
 	var scene = PackedScene.new()
 	var result = scene.pack(grid)

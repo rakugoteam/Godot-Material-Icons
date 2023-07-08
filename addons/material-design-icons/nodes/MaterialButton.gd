@@ -1,34 +1,26 @@
-tool
+@tool
+@icon("res://addons/material-design-icons/nodes/MaterialButton.svg")
 extends Button
-class_name MaterialButton, "res://addons/material-design-icons/nodes/MaterialButton.svg"
+class_name MaterialButton
 
-export var icon_name := "image-outline" setget _set_icon_name
-export (String, "16", "24", "32", "48", "64", "72", "96", "128") var icon_size := "16" setget _set_icon_size
+@export var icon_name := "image-outline":
+	set(value):
+		_set_icon_name(value)
 
-var font := DynamicFont.new()
-var MaterialIcons = preload("../icons/icons.gd").new()
-const font_path := "addons/material-design-icons/fonts/%s.tres"
+@export_range(16, 128, 1)
+var icon_size := 16:
+	set(value):
+		_set_icon_size(value)
 
-func _init():
+var font: FontFile
+
+func _ready():
 	clip_text = false
-	font = load(font_path % icon_size)
-	set("custom_fonts/font", font)
-	text = MaterialIcons.get_icon_char(icon_name)
+	font = MaterialIconsDB.font
+	set("theme_override_fonts/font", font)
 
 func _set_icon_name(value: String):
-	icon_name = value
-	
-	if get("custom_fonts/font") != font:
-		_init()
-	else:
-		text = MaterialIcons.get_icon_char(icon_name)
+	text = MaterialIconsDB.get_icon_char(value)
 
-func _set_icon_size(value: String):
-	icon_size = value
-	
-	if get("custom_fonts/font") != font:
-		_init()
-	else:
-		font = load(font_path % icon_size)
-
-	set("custom_fonts/font", font)
+func _set_icon_size(value: int):
+	set("theme_override_font_sizes/font_size", value)
