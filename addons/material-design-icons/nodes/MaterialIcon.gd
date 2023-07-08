@@ -4,17 +4,17 @@
 extends Label
 class_name MaterialIcon
 
-var _icon_name := "image-outline"
-var _icon_size := 16
+var _icon_name : String
+var _icon_size : int
 
-@export var icon_name : String:
+@export var icon_name := "image-outline":
 	set(value):
 		_set_icon_name(value)
 	get:
 		return _icon_name
 
 @export_range(16, 128, 1)
-var icon_size : int:
+var icon_size := 16:
 	set(value):
 		_set_icon_size(value)
 	get:

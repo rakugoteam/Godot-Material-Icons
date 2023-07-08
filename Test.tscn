@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkr5smdig8tv4"]
+[gd_scene load_steps=4 format=3 uid="uid://dkr5smdig8tv4"]
 
 [ext_resource type="FontFile" uid="uid://bbfeoo2kuf30n" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="1_ommtp"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="2"]
 [ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialButton.gd" id="3"]
 
 [node name="Test" type="GridContainer"]
@@ -17,3 +18,12 @@ text = "󰌀"
 script = ExtResource("3")
 icon_name = "microsoft-internet-explorer"
 icon_size = 86
+
+[node name="MaterialIcon" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ommtp")
+theme_override_font_sizes/font_size = 128
+text = "󰋩"
+script = ExtResource("2")
+icon_name = "image"
+icon_size = 128
