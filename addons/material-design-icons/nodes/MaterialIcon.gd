@@ -25,10 +25,14 @@ func _ready():
 	var font := MaterialIconsDB.font
 	set("theme_override_fonts/font", font)
 
+
 func _set_icon_name(value: String):
+	await ready
 	_icon_name = value
 	text = MaterialIconsDB.get_icon_char(value)
 
 func _set_icon_size(value: int):
+	await ready
 	_icon_size = value
 	set("theme_override_font_sizes/font_size", value)
+
