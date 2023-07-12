@@ -47,7 +47,6 @@ func update_table(filter := ""):
 
 	for key in MaterialIconsDB.icons:
 		if filter:
-			# if not fuzzy(filter, key):
 			if not (filter in key):
 				continue
 		
@@ -63,12 +62,6 @@ func update_table(filter := ""):
 
 	table += "[/table]"
 	icons_text.parse_bbcode(table)
-
-# func fuzzy(filter:String, key:String):
-# 	for letter in filter.to_lower():
-# 		if not (letter in key):
-# 			return false
-# 	return true
 
 func _on_meta(link:String):
 	DisplayServer.clipboard_set(link)

@@ -1,10 +1,9 @@
 @tool
 extends Node
 
-var json_path := "res://addons/material-design-icons/icons/icons.json"
-@onready var font := preload(
-	"res://addons/material-design-icons/fonts/material_design_icons.ttf"
-	) as FontFile
+const json_path := "res://addons/material-design-icons/icons/icons.json"
+const font_path := "res://addons/material-design-icons/fonts/material_design_icons.ttf"
+@onready var font := preload(font_path) as FontFile
 var icons := {}
 
 func _ready():
