@@ -48,3 +48,18 @@ func get_icon_name(char:int) -> String:
 
 func get_icon_char(id:String) -> String:
 	return char(get_icon_code(id))
+
+func prase_icons(text:String) -> String:
+	# take replace [icon] to [font=MaterialIcons]icon_char[/font]
+	var regex = RegEx.new()
+	regex.compile("\\[icon:(.*?)\\]")
+	var x = regex.search(text)
+	while x != null:
+		var icon = x.get_string(1)
+		var char = get_icon_char(icon)
+		var r = "[font={font}]{char}[/font]"
+		r = r.format({"font":font.resource_path, "char": char})
+		text = text.replace(x.get_string(), r)
+		x = regex.search(text, x.get_end())
+	
+	return text
