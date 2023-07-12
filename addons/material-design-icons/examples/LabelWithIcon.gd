@@ -2,8 +2,14 @@
 extends RichTextLabel
 
 @export_multiline
-var text_with_icons := "Text with Icons: [icon:format-textbox] [icon:alpha]"
+var text_with_icons : String:
+	set(value):
+		await ready
+		_text_with_icons = value
+		bbcode_enabled = true
+		parse_bbcode(MaterialIconsDB.prase_icons(value))
 
-func _ready():
-	bbcode_enabled = true
-	parse_bbcode(MaterialIconsDB.prase_icons(text_with_icons))
+	get:
+		return _text_with_icons
+
+var _text_with_icons : String

@@ -42,3 +42,4 @@ offset_bottom = 268.0
 bbcode_enabled = true
 text = "Text with Icons: [icon:format-textbox] [icon:alpha]"
 script = ExtResource("4_djogk")
+text_with_icons = "Text with Icons: [icon:format-textbox] [icon:alpha]"
