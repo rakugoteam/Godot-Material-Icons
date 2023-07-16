@@ -10,6 +10,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MaterialButton" type="Button" parent="."]
 layout_mode = 2
@@ -29,9 +31,9 @@ offset_right = 226.0
 offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("1_fqgpp")
 theme_override_font_sizes/font_size = 128
-text = "󰋩"
+text = "󰢚"
 script = ExtResource("3_87ldj")
-icon_name = "image"
+icon_name = "alien"
 icon_size = 128
 
 [node name="LabelWithIcon" type="RichTextLabel" parent="."]
