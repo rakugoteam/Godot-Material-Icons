@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bbfeoo2kuf30n" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="1_fqgpp"]
 [ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialButton.gd" id="2_l3c8x"]
 [ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="3_87ldj"]
-[ext_resource type="Script" path="res://addons/material-design-icons/examples/LabelWithIcon.gd" id="4_djogk"]
+[ext_resource type="Script" path="res://addons/material-design-icons/examples/LabelWithIcons.gd" id="4_lf58l"]
 
 [node name="Test" type="Control"]
 layout_mode = 3
@@ -36,12 +36,12 @@ script = ExtResource("3_87ldj")
 icon_name = "alien"
 icon_size = 128
 
-[node name="LabelWithIcon" type="RichTextLabel" parent="."]
+[node name="LabelWithIcons" type="RichTextLabel" parent="."]
 layout_mode = 2
 offset_top = 135.0
 offset_right = 273.0
 offset_bottom = 268.0
 bbcode_enabled = true
-text = "Text with Icons: [icon:format-textbox] [icon:alpha]"
-script = ExtResource("4_djogk")
-text_with_icons = "Text with Icons: [icon:format-textbox] [icon:alpha]"
+text = "Text with Icons: [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰴑[/font] Second icon: [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰀫[/font]"
+script = ExtResource("4_lf58l")
+text_with_icons = "Text with Icons: [icon:format-textbox] Second icon: [icon:alpha]"

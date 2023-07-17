@@ -8,7 +8,7 @@ var text_with_icons : String:
 			await ready
 		_text_with_icons = value
 		bbcode_enabled = true
-		parse_bbcode(MaterialIconsDB.prase_icons(value))
+		text = MaterialIconsDB.prase_icons(value)
 
 	get:
 		return _text_with_icons
