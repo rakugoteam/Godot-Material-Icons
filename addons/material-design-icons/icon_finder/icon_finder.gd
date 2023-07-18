@@ -47,7 +47,7 @@ func update_table(filter := ""):
 
 	for key in MaterialIconsDB.icons:
 		if filter:
-			if not (filter in key):
+			if not (filter.to_lower() in key):
 				continue
 		
 		var link := "[url={link}]{text}[/url]"
