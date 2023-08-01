@@ -6,7 +6,7 @@
    viewBox="0 0 24 24"
    id="svg4"
    sodipodi:docname="MaterialIcon.svg"
-   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    inkscape:export-filename="/home/jeremi360/DevProjects/Godot/Godot-Material-Icons/icon.png"
    inkscape:export-xdpi="256"
    inkscape:export-ydpi="256"
@@ -26,16 +26,18 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="33.125"
-     inkscape:cx="12"
+     inkscape:cx="12.030189"
      inkscape:cy="12.015094"
      inkscape:window-width="1920"
-     inkscape:window-height="1025"
+     inkscape:window-height="1002"
      inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-y="40"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="svg4"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <path
      d="M19,19H5V5H19M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z"
      id="path2"
-     style="fill:#a5efac;fill-opacity:1" />
+     style="fill:#8eef97;fill-opacity:1" />
 </svg>

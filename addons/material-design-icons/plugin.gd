@@ -1,12 +1,30 @@
-tool
+@tool
 extends EditorPlugin
-var icon_search : WindowDialog
-var menu_item := ["Find Material Icon", "popup_centered", Vector2(450, 400)]
+
+const icons_db := "res://addons/material-design-icons/icons/icons.gd"
+const icon_finder_script :=\
+	"res://addons/material-design-icons/icon_finder/IconFinder.tscn"
+var command_palette := get_editor_interface().get_command_palette()
+var editor_interface := get_editor_interface().get_base_control()
+var icon_search : Window
+var popup_size := Vector2i(775, 400)
 
 func _enter_tree():
-	icon_search = preload("icon_finder/IconFinder.tscn").instance()
-	add_control_to_container(CONTAINER_TOOLBAR, icon_search)
-	add_tool_menu_item(menu_item[0], icon_search, menu_item[1], menu_item[2])
+	add_autoload_singleton("MaterialIconsDB", icons_db)
+	add_tool_menu_item("Find Material Icon", show_icon_finder)
+	command_palette.add_command(
+		"Find Material Icon", "find_icon", show_icon_finder)
+
+func show_icon_finder():
+	if icon_search == null:
+		icon_search = load(icon_finder_script).instantiate() as Window
+		editor_interface.add_child(icon_search)
+		
+	icon_search.theme = editor_interface.theme
+	icon_search.popup_centered(popup_size)
 
 func _exit_tree():
-	remove_control_from_container(CONTAINER_TOOLBAR, icon_search)
+	remove_tool_menu_item("Find Material Icon")
+	command_palette.remove_command("find_icon")
+	remove_autoload_singleton("MaterialIconsDB")
+	icon_search.queue_free()

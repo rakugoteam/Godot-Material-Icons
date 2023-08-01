@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkr5smdig8tv4"]
+
+[ext_resource type="FontFile" uid="uid://bbfeoo2kuf30n" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="1_fqgpp"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialButton.gd" id="2_l3c8x"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="3_87ldj"]
+[ext_resource type="Script" path="res://addons/material-design-icons/examples/LabelWithIcons.gd" id="4_lf58l"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MaterialButton" type="Button" parent="."]
+layout_mode = 2
+offset_right = 94.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("1_fqgpp")
+theme_override_font_sizes/font_size = 86
+text = "󰌀"
+script = ExtResource("2_l3c8x")
+icon_name = "microsoft-internet-explorer"
+icon_size = 86
+
+[node name="MaterialIcon" type="Label" parent="."]
+layout_mode = 2
+offset_left = 98.0
+offset_right = 226.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("1_fqgpp")
+theme_override_font_sizes/font_size = 128
+text = "󰢚"
+script = ExtResource("3_87ldj")
+icon_name = "alien"
+icon_size = 128
+
+[node name="LabelWithIcons" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_top = 135.0
+offset_right = 273.0
+offset_bottom = 268.0
+bbcode_enabled = true
+text = "Text with Icons: [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰴑[/font] Second icon: [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰀫[/font]"
+script = ExtResource("4_lf58l")
+text_with_icons = "Text with Icons: [icon:format-textbox] Second icon: [icon:alpha]"
