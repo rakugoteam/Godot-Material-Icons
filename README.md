@@ -24,4 +24,4 @@ From version 2.0 you can use the icons in RichTextLabel.
 
 ## Exporting
 For emojis to work in exported projects, you need add `*.json` files to include files settings:
-![include files settings](/assets/other/screenshot_export.png)
+![include files settings](screenshot_export.png)
