@@ -19,7 +19,9 @@ So you can find the icons easily.
 
 ## Using it with RichTextLabel
 From version 2.0 you can use the icons in RichTextLabel.
+
 *I will backport this feature to version 1.x soon.*
+
 [Example code of using the icons in RichTextLabel here](https://github.com/rakugoteam/Godot-Material-Icons/blob/godot-4/addons/material-design-icons/examples/LabelWithIcons.gd)
 
 ## Exporting
