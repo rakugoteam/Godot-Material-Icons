@@ -15,8 +15,7 @@ Version 2.0 is rewritten to give you access to **MaterialIconsDB** singleton for
 
 It's also adds **IconsFinder** to the Godot's **Tools** menu.
 So you can find the icons easily.
-
-![](/assets/addons/material-icons.png)
+![IconsFinder Screen Shot](screenshot_if.png)
 
 ## Using it with RichTextLabel
 From version 2.0 you can use the icons in RichTextLabel.
