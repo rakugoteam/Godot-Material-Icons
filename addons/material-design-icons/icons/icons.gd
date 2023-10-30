@@ -31,9 +31,12 @@ func init_icons_dictionaries(dict:Dictionary):
 		icons[icon] = value
 
 func get_icon_code(id:String) -> int:
+	if "," in id:
+		id = id.split(",")[0]
+	
 	if id in icons:
 		return icons[id]
-		
+	
 	push_warning("Icon '%s' not found." % id)
 	return 0
 
@@ -48,7 +51,7 @@ func get_icon_name(char:int) -> String:
 func get_icon_char(id:String) -> String:
 	return char(get_icon_code(id))
 
-func prase_icons(text:String) -> String:
+func parse_icons(text:String) -> String:
 	# take replace [icon] to [font=MaterialIcons]icon_char[/font]
 	var regex = RegEx.new()
 	regex.compile("\\[icon:(.*?)\\]")
