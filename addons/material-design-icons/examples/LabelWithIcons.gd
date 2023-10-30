@@ -7,11 +7,9 @@ var text_with_icons : String:
 		if !is_node_ready():
 			return
 		
-		_text_with_icons = value
+		text_with_icons = value
 		bbcode_enabled = true
 		text = MaterialIconsDB.parse_icons(value)
 
 	get:
-		return _text_with_icons
-
-var _text_with_icons : String
+		return text_with_icons
