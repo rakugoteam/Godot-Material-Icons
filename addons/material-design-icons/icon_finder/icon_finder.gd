@@ -43,6 +43,7 @@ func _on_finished():
 
 func _on_visibility_changed():
 	if is_visible():
+		search_line_edit.text = ""
 		update_icons_size(size_slider.value)
 
 func update_icons_size(value:int):
@@ -64,10 +65,7 @@ func update_table(filter := ""):
 		
 		var link := "[url={link}]{text}[/url]"
 		var text := MaterialIconsDB.get_icon_char(key)
-		link = link.format({
-			"link": key,
-			"text": text
-		})
+		link = link.format({"link": key, "text": text})
 
 		var cell := "[cell]{link}[/cell]"
 		table += cell.format({"link": link})

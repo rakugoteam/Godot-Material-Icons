@@ -29,9 +29,9 @@ func init_icons_dictionaries(data:Array):
 		var id = icon_data["name"]
 		var hex = icon_data["codepoint"]
 		icons[id] = ("0x"+ hex).hex_to_int()
-		prints(id, icons[id])
+		# prints(id, icons[id])
 	
-	prints("icons loaded")
+	# prints("icons loaded")
 
 func get_icon_code(id:String) -> int:
 	if "," in id:
@@ -63,7 +63,7 @@ func parse_icons(text:String) -> String:
 		var icon = x.get_string(1)
 		var char = get_icon_char(icon)
 		var r = "[font={font}]{char}[/font]"
-		r = r.format({"font":font.resource_path, "char": char})
+		r = r.format({"font":font_path, "char": char})
 		text = text.replace(x.get_string(), r)
 		x = regex.search(text, x.get_end())
 	
