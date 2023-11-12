@@ -1,6 +1,5 @@
 # Godot-specific ignores
-# .import/ - commented out because we want to import to those files
-*.import
+.import/
 export.cfg
 export_presets.cfg
 *.godot
