@@ -18,8 +18,8 @@ func _enter_tree():
 func show_icon_finder():
 	if icon_search == null:
 		icon_search = load(icon_finder_script).instantiate() as Window
-		editor_interface.add_child(icon_search)
-		
+		editor_interface.add_child.call_deferred(icon_search)
+	
 	icon_search.theme = editor_interface.theme
 	icon_search.popup_centered(popup_size)
 
