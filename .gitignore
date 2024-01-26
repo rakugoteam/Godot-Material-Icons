@@ -13,3 +13,4 @@ addons/godot-plugin-refresher
 .directory
 .vscode/
 *.ini
+env

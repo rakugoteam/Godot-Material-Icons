@@ -23,11 +23,10 @@ func get_file_content(path:String) -> String:
 
 	return content
 
-func init_icons_dictionaries(data:Array):
-	icons = {}
-	for icon_data in data:
-		var id = icon_data["name"]
-		var hex = icon_data["codepoint"]
+func init_icons_dictionaries(data:Dictionary):
+	icons = data
+	for id in data:
+		var hex = icons[id]
 		icons[id] = ("0x"+ hex).hex_to_int()
 		# prints(id, icons[id])
 	
