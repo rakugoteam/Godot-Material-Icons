@@ -63,6 +63,12 @@ func parse_icons(text:String) -> String:
 		var char = get_icon_char(icon)
 		var r = "[font={font}]{char}[/font]"
 		r = r.format({"font":font_path, "char": char})
+
+		if icon.split(",").size() > 1:
+			var size = icon.split(",")[1]
+			var s = "[font_size={size}]{r}[/font_size]"
+			r = s.format({"size":size, "r":r})
+
 		text = text.replace(x.get_string(), r)
 		x = regex.search(text, x.get_end())
 	
