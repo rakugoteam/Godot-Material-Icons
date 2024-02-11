@@ -27,4 +27,6 @@ func _exit_tree():
 	remove_tool_menu_item("Find Material Icon")
 	command_palette.remove_command("find_icon")
 	remove_autoload_singleton("MaterialIconsDB")
-	icon_search.queue_free()
+
+	if icon_search:
+		icon_search.queue_free()
