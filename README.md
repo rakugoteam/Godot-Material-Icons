@@ -49,3 +49,7 @@ func _ready():
 ## Exporting
 For emojis to work in exported projects, you need add `*.json` files to include files settings:
 ![include files settings](.assets/export.png)
+
+[lic]: https://img.shields.io/github/license/rakugoteam/Godot-Material-Icons?style=flat-square&label=📃%20License&
+[lang]: https://img.shields.io/github/languages/top/rakugoteam/Godot-Material-Icons?style=flat-square
+[lic-font]:https://img.shields.io/static/v1.svg?label=📜%20Font%20License&message=Pictogrammers%20Free%20License&color=informational&style=flat-square
