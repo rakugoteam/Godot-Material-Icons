@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bni8w3a3pcbwn"]
+[gd_scene load_steps=4 format=3 uid="uid://bni8w3a3pcbwn"]
 
 [ext_resource type="Script" path="res://addons/material-design-icons/icon_finder/icon_finder.gd" id="1_nv02s"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialButton.gd" id="3_cqgj8"]
 [ext_resource type="FontFile" uid="uid://bbfeoo2kuf30n" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="4_xlv7e"]
 
 [node name="IconFinder" type="Window" node_paths=PackedStringArray("icons_text", "notify_label", "search_line_edit", "size_slider", "size_label", "scroll_container")]
@@ -10,7 +11,7 @@ size = Vector2i(775, 400)
 script = ExtResource("1_nv02s")
 icons_text = NodePath("Panel/VBoxContainer/ScrollContainer/RichTextLabel")
 notify_label = NodePath("Panel/VBoxContainer/Notify")
-search_line_edit = NodePath("Panel/VBoxContainer/Search")
+search_line_edit = NodePath("Panel/VBoxContainer/HBoxContainer/Search")
 size_slider = NodePath("Panel/VBoxContainer/SliderContainer/HSlider")
 size_label = NodePath("Panel/VBoxContainer/SliderContainer/LabelSize")
 scroll_container = NodePath("Panel/VBoxContainer/ScrollContainer")
@@ -34,12 +35,24 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Search" type="LineEdit" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Search" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search"
 caret_blink = true
 caret_blink_interval = 0.5
+
+[node name="HelpButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xlv7e")
+theme_override_font_sizes/font_size = 24
+text = "󰋖"
+script = ExtResource("3_cqgj8")
+icon_name = "help"
+icon_size = 24
 
 [node name="Notify" type="Label" parent="Panel/VBoxContainer"]
 visible = false

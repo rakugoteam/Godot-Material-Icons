@@ -1,9 +1,14 @@
 @tool
 @icon("res://addons/material-design-icons/nodes/MaterialIcon.svg")
-
 extends Label
+
+## Simple UI node to display Material Design Icon
+## @tutorial: "rakkarage.github.io/icons-docs/version/how-to-use"
+## @tutorial(Icon Finder): "rakkarage.github.io/icons-docs/version/how-to-use"
+
 class_name MaterialIcon
 
+## Name of Material Icon to display
 @export var icon_name := "image-outline":
 	set(value):
 		icon_name = value
@@ -11,11 +16,12 @@ class_name MaterialIcon
 	
 	get: return icon_name
 
+## Size of the icon in range 16-128
 @export_range(16, 128, 1)
 var icon_size := 16:
 	set(value):
 		icon_size = value
-		set("theme_override_font_sizes/font_size", value)
+		set("theme_override_font_sizes/font_size",value)
 	
 	get: return icon_size
 
@@ -23,6 +29,5 @@ func _ready():
 	clip_text = false
 	var font := MaterialIconsDB.font
 	text = MaterialIconsDB.get_icon_char(icon_name)
-	set("theme_override_fonts/font", font)
-	set("theme_override_font_sizes/font_size", icon_size)
-
+	set("theme_override_fonts/font",font)
+	set("theme_override_font_sizes/font_size",icon_size)
