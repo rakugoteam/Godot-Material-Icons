@@ -18,8 +18,8 @@ func _enter_tree():
 func show_icon_finder():
 	if icon_search == null:
 		icon_search = load(icon_finder_script).instantiate() as Window
-		editor_interface.add_child(icon_search)
-		
+		editor_interface.add_child.call_deferred(icon_search)
+	
 	icon_search.theme = editor_interface.theme
 	icon_search.popup_centered(popup_size)
 
@@ -27,4 +27,6 @@ func _exit_tree():
 	remove_tool_menu_item("Find Material Icon")
 	command_palette.remove_command("find_icon")
 	remove_autoload_singleton("MaterialIconsDB")
-	icon_search.queue_free()
+
+	if icon_search:
+		icon_search.queue_free()

@@ -12,8 +12,9 @@ config_version=5
 
 config/name="Material Icons for Godot"
 config/description="No Description"
+config/tags=PackedStringArray("addon", "rakugo")
 run/main_scene="res://addons/material-design-icons/examples/Test.tscn"
-config/features=PackedStringArray("4.1")
+config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 
 [autoload]

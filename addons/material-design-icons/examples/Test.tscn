@@ -18,11 +18,9 @@ layout_mode = 2
 offset_right = 94.0
 offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("1_fqgpp")
-theme_override_font_sizes/font_size = 86
-text = "󰌀"
+theme_override_font_sizes/font_size = 16
+text = "󰥶"
 script = ExtResource("2_l3c8x")
-icon_name = "microsoft-internet-explorer"
-icon_size = 86
 
 [node name="MaterialIcon" type="Label" parent="."]
 layout_mode = 2
@@ -30,11 +28,9 @@ offset_left = 98.0
 offset_right = 226.0
 offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("1_fqgpp")
-theme_override_font_sizes/font_size = 128
-text = "󰢚"
+theme_override_font_sizes/font_size = 16
+text = "󰥶"
 script = ExtResource("3_87ldj")
-icon_name = "alien"
-icon_size = 128
 
 [node name="LabelWithIcons" type="RichTextLabel" parent="."]
 layout_mode = 2
@@ -42,6 +38,6 @@ offset_top = 135.0
 offset_right = 273.0
 offset_bottom = 268.0
 bbcode_enabled = true
-text = "Text with Icons: [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰴑[/font] Second icon: [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰀫[/font]"
+text = "Label with icons [font=res://addons/material-design-icons/fonts/material_design_icons.ttf]󰥶[/font]"
 script = ExtResource("4_lf58l")
-text_with_icons = "Text with Icons: [icon:format-textbox] Second icon: [icon:alpha]"
+text_with_icons = "Label with icons [icon:image-outline]"
