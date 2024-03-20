@@ -3,8 +3,8 @@
 extends Button
 
 ## Simple Button with Material Icon
-## @tutorial: "rakkarage.github.io/icons-docs/version/how-to-use"
-## @tutorial(Icon Finder): "rakkarage.github.io/icons-docs/version/how-to-use"
+## @tutorial: "rakugoteam.github.io/material-icons-docs/2.1/MaterialButton/"
+## @tutorial(Icon Finder): "rakugoteam.github.io/material-icons-docs/2.1/HowToUse/"
 class_name MaterialButton
 
 ## Name of Material Icon to display

@@ -3,8 +3,8 @@
 extends Label
 
 ## Simple UI node to display Material Design Icon
-## @tutorial: "rakkarage.github.io/icons-docs/version/how-to-use"
-## @tutorial(Icon Finder): "rakkarage.github.io/icons-docs/version/how-to-use"
+## @tutorial: "rakugoteam.github.io/material-icons-docs/2.1/MaterialIcon/"
+## @tutorial(Icon Finder): "rakugoteam.github.io/material-icons-docs/2.1/HowToUse/"
 
 class_name MaterialIcon
 
